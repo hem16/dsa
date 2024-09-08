@@ -1,5 +1,29 @@
-package org.example;
+package org.example.dp.builder;
 
+/*
+-----------------------
+Builder Design Pattern:
+-----------------------
+If we have complex process to create an object, the complexity could be because of number of args that constructor needs.
+
+Complexity because of steps may be needed in order to create an object.
+
+So with this pattern we remove the logic related to object construction from our code and abstracted into multile seperate classes.
+
+The user then will easily create the object.
+
+There are various different classes that can create to implement Builder Pattern
+
+- Role - Product - final complex object that we want to create.
+
+- Role - Builder - will defined interface for creating 'parts' of the product.
+
+- Role - Concrete Builder - constructs parts and assembles final product.
+                          - keep track of products it create.
+- Role - Director - uses builder to construct object.
+                  - knows the steps & their sequence to build product.
+
+ */
 public class BuilderDemoEx {
 
     final int x;
@@ -52,7 +76,7 @@ public class BuilderDemoEx {
     }
 
     public static void main(String args[]) {
-        BuilderDemoEx.Builder builder = new BuilderDemoEx.Builder(4,6);
+        Builder builder = new Builder(4,6);
         builder.addZ(2).addL(8).build();
         System.out.println(builder);
     }

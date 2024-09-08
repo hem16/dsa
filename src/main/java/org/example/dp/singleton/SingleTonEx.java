@@ -1,4 +1,4 @@
-package org.example;
+package org.example.dp.singleton;
 
 public class SingleTonEx {
     private static SingleTonEx INSTANCE = null;
